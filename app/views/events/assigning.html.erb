@@ -1,0 +1,13 @@
+<p>If the group admin should not see the pairings:</p>
+
+<h1>The mails with the pairs have been sent!</h1>
+<h1>Thank you for playing.</h1>
+
+<p>If the group admin can see who has who:</p>
+
+<% @participants.each do |participant| %>
+<h1> <%=participant.name%> has to give a gift to <%=participant.target%> .</h1>
+<% end %>
+
+
+<%= link_to "Back to list", events_path, class: "btn btn-primary" %>

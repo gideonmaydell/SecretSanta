@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :participants, only: [:create]
+    get "pairs", to: "events#assigning"
   end
 end

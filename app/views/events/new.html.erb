@@ -1,0 +1,9 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :maximum_amount %>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+
+<%= link_to "Back to list", events_path %>

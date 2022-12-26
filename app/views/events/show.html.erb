@@ -1,0 +1,27 @@
+<h1>Event:</h1>
+<hr>
+<p>Title -> <%= @event.title %></p>
+<p>Maximum Amount -> <%= @event.maximum_amount %></p>
+
+<p>Participants:</p>
+<ul>
+  <% @event.participants.each do |participant| %>
+    <li><%=participant.name%> - <%=participant.email%></li>
+  <% end %>
+</ul>
+
+<p>Button -> do match up</p>
+
+<h3>Add a new participant:</h3>
+
+<%= simple_form_for [@event, @participant] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+
+<%= link_to "Delete", event_path(@event), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<%= link_to "Back to Events", events_path(@event), class: "btn btn-primary"%>

@@ -1,0 +1,9 @@
+<h1>All Games:</h1>
+<hr>
+<ul>
+  <% @events.each do |event| %>
+    <li><%=link_to event.title, event_path(event)%></li>
+  <% end %>
+</ul>
+
+<%= link_to "+ Add a new game", new_event_path, class: "btn btn-primary"%>

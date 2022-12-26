@@ -28,6 +28,19 @@ class EventsController < ApplicationController
     redirect_to events_path(@event), status: :see_other
   end
 
+  def assigning
+    @event = Event.find(params[:event_id])
+    @participants = @event.participants
+    receivers = @participants
+    @participants.each do |participant|
+      # 1.) Update target field of participant participant.target = receivers.sample.name
+      target = (receivers - [participant]).sample.name
+      participant.update(target: target)
+      # 2.) Remove receiver from list permanently.
+      receivers -= [Participant.find_by(name: target)]
+    end
+  end
+
   private
 
   def event_params

@@ -1,7 +1,7 @@
 <h1>Event:</h1>
 <hr>
-<p>Title -> <%= @event.title %></p>
-<p>Maximum Amount -> <%= @event.maximum_amount %></p>
+<h4>Title -> <%= @event.title %></h4>
+<h4>Maximum Amount -> <%= @event.maximum_amount %> €</h4>
 
 <p>Participants:</p>
 <ul>
@@ -11,6 +11,8 @@
 </ul>
 
 <%= link_to "Assign Buddies", event_pairs_path(@event), class: "btn btn-primary"%>
+
+<hr>
 
 <h3>Add a new participant:</h3>
 

@@ -1,10 +1,17 @@
 <h1>All Games</h1>
 <p>Add as many games as you want (friends, office, sports club):</p>
 <hr>
-<ul>
-  <% @events.each do |event| %>
-    <li ><%=link_to event.title, event_path(event)%></li>
-  <% end %>
-</ul>
 
-<%= link_to "+ Add a new game", new_event_path, class: "btn btn-primary"%>
+<div class="flex-index">
+  <%= link_to "+ Add a new game", new_event_path, class: "btn btn-primary"%>
+</div>
+
+<div class="flex-index">
+  <div class="card-event">
+    <ul class="list-index">
+      <% @events.each do |event| %>
+        <li><%=link_to event.title, event_path(event), class: "li-index" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

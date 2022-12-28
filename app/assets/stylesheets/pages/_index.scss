@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.flex-index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-index{
+  list-style-type: none;
+}
+
+.li-index {
+  text-decoration: none;
+  color: #205295;
+}

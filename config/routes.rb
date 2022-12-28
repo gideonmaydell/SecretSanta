@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :events do
+  resources :events, except: %i[edit update] do
     resources :participants, only: [:create]
     get "pairs", to: "events#assigning"
   end

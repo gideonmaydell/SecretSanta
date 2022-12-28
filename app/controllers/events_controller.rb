@@ -33,11 +33,11 @@ class EventsController < ApplicationController
     @participants = @event.participants
     receivers = @participants
     @participants.each do |participant|
-      # 1.) Pick a sample name from the participants array without self as target.
+      # 1.) Pick a sample name from the participants array without first name as target.
       target = (receivers - [participant]).sample.name
-      # 2.) Update target field of participant.
-      participant.update(target: target)
-      # 3.) Remove receiver from list permanently.
+      # 2.) Update target field of participant with the name drawn from sample.
+      participant.update(target:)
+      # 3.) Remove target from list permanently.
       receivers -= [Participant.find_by(name: target)]
     end
   end

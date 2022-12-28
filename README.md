@@ -6,5 +6,5 @@ On the event is a button, that can randomly assign each participant with another
 
 After the pairs are assigned, the program then sends an email to each participant to notify them of their Santa gift buddy. (only in development environment)
 
-Local host: http://localhost:3000
+Local host: http://localhost:3000 \
 Local host mail preview: http://localhost:3000/rails/mailers/participant_mailer/assignment
